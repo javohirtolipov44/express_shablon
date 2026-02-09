@@ -1,0 +1,47 @@
+<div class='row justify-content-center'>
+	<div class='col-md-4'>
+		<div class='card shadow'>
+			<div class='card-body'>
+				<h3 class='card-title text-center mb-4'>Register</h3>
+
+				<form action='/auth/register' method='post'>
+					<div class='form-floating mb-3'>
+						<input
+							type='string'
+							class='form-control'
+							id='name'
+							placeholder='Osman Ali'
+							name='name'
+						/>
+						<label for='name'>Full Name</label>
+					</div>
+					<div class='form-floating mb-3'>
+						<input
+							type='email'
+							class='form-control'
+							id='email'
+							placeholder='Osman Ali'
+							name='email'
+						/>
+						<label for='email'>Email</label>
+					</div>
+					<div class='form-floating mb-3'>
+						<input
+							type='password'
+							class='form-control'
+							id='password'
+							placeholder='Osman Ali'
+							name='password'
+						/>
+						<label for='password'>Password</label>
+					</div>
+					<button type='submit' class='btn btn-success w-100'>Sign Up</button>
+
+					<div class='text-center mt-2'>
+						<small>Already have an account? <a href='/auth/login'>sign in</a></small>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+</div>

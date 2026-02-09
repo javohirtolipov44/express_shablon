@@ -1,0 +1,33 @@
+<h1>Admin Products</h1>
+
+<div class='container mt-4'>
+	<div class='row'>
+		{{#each products}}
+			<div class='card col-3'>
+				<img
+					src='http://localhost:8000/images/{{this.image}}'
+					class='card-img-top mt-2'
+					alt='{{this.title}}'
+				/>
+				<div class='card-body'>
+					<div class='d-flex justify-content-between align-items-center'>
+						<h3>{{this.title}}</h3>
+						<h5>${{this.price}}</h5>
+					</div>
+
+					<div class='card-footer d-flex gap-2 pt-2 px-1 pb-2'>
+						<a href='/admin/edit-product/{{this._id}}' class='btn btn-sm btn-warning w-50'>Edit</a>
+						<form
+							action='/admin/delete-product/{{this._id}}'
+							method='post'
+							class='w-50 m-0'
+							onclick="return confirm('Are you sure delete this product?')"
+						>
+							<button type='submit' class='btn btn-danger btn-sm w-100'>Delete</button>
+						</form>
+					</div>
+				</div>
+			</div>
+		{{/each}}
+	</div>
+</div>

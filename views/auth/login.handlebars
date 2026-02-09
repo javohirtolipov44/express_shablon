@@ -1,0 +1,42 @@
+<div class='row justify-content-center'>
+	<div class='col-md-4'>
+		<div class='card shadow'>
+			<div class='card-body'>
+				<h3 class='card-title text-center mb-4'>Login</h3>
+
+				<form action='/auth/login' method='post'>
+					<div class='form-floating mb-3'>
+						<input
+							type='text'
+							class='form-control'
+							id='email'
+							placeholder='Osman Ali'
+							name='email'
+						/>
+						<label for='email'>Email</label>
+					</div>
+					<div class='form-floating'>
+						<input
+							type='password'
+							class='form-control'
+							id='password'
+							placeholder='Osman Ali'
+							name='password'
+						/>
+						<label for='password'>Password</label>
+					</div>
+					<div class='d-flex justify-content-end mb-3'>
+						<small>
+							<a href='/auth/forgot-password'>Forgot password?</a>
+						</small>
+					</div>
+					<button type='submit' class='btn btn-success w-100'>Sign in</button>
+
+					<div class='text-center mt-2'>
+						<small>Don't have an account? <a href='/auth/register'>sign up</a></small>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+</div>

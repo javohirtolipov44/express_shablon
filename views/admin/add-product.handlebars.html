@@ -1,0 +1,19 @@
+<h1>Add Product</h1>
+
+<form action='/admin/add-product' method='post' enctype='multipart/form-data'>
+	<div class='form-floating mb-3'>
+		<input class='form-control' id='title' placeholder='Title' name='title' />
+		<label for='title'>Title</label>
+	</div>
+
+	<div class='mb-3'>
+		<input class='form-control form-control-lg' type='file' name='myFile' />
+	</div>
+
+	<div class='form-floating mb-3'>
+		<input class='form-control' id='price' placeholder='Price' name='price' />
+		<label for='price'>Price</label>
+	</div>
+
+	<button type='submit' class='btn btn-success'>Submit</button>
+</form>

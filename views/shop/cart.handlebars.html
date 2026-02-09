@@ -1,0 +1,64 @@
+<h1>Shopping cart</h1>
+
+{{#if products.length}}
+	<table class='table table-striped align-middle'>
+		<thead>
+			<tr>
+				<th scope='col'>Product</th>
+				<th scope='col'>Qty</th>
+				<th scope='col'>Price</th>
+				<th scope='col'>Action</th>
+			</tr>
+		</thead>
+		<tbody>
+			{{#each products}}
+				<tr>
+					<td class='d-flex gap-2 align-items-center'>
+						<img
+							src='http://localhost:8000/images/{{this.image}}'
+							alt='{{this.title}}'
+							width='100'
+							height='50'
+						/>
+						<p class='fw-bold m-0'>{{this.title}}</p>
+					</td>
+					<td>
+						<div class='d-flex align-items-center gap-2'>
+							<form action='/cart/update/{{this._id}}' method='post' class='m-0'>
+								<input type='hidden' name='action' value='decrement' />
+								<button class='btn btn-sm btn-outline-primary'>-</button>
+							</form>
+							<p class='m-0 p-0'>
+								{{this.quantity}}
+							</p>
+							<form action='/cart/update/{{this._id}}' method='post' class='m-0'>
+								<input type='hidden' name='action' value='increment' />
+								<button class='btn btn-sm btn-outline-primary'>+</button>
+							</form>
+						</div>
+					</td>
+					<td>{{this.totalPrice}}</td>
+					<td>
+						<form action='/cart/delete/{{this._id}}' method='post' class='m-0'>
+							<button
+								class='btn btn-sm btn-danger'
+								onclick="return confirm('Are you sure?')"
+							>Remove</button>
+						</form>
+					</td>
+				</tr>
+			{{/each}}
+			<tr>
+				<td colspan='4'>
+					<form action='/orders/place-order' method='post' class='d-flex justify-content-end m-0'>
+						<button class='btn btn-primary btn-sm'>Place order {{totalPrice}}</button>
+					</form>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+{{else}}
+	<div class='alert alert-info' role='alert'>
+		No items in cart.
+	</div>
+{{/if}}
