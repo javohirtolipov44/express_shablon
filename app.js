@@ -46,9 +46,11 @@ async function bootstrap() {
 		mongoose.connect(process.env.MONGO_URI);
 		console.log('DB Connected');
 		const PORT = process.env.PORT;
-		app.listen(PORT, () => console.log(`Server is running on http://localhost:${PORT}`));
+		const HOST = process.env.HOST;
+		app.listen(PORT, HOST, () => console.log(`Server is running on http://localhost:${PORT}`));
 	} catch (error) {
 		console.log(`Error: ${error}`);
 	}
 }
 bootstrap();
+
